@@ -6,24 +6,21 @@
 /*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 05:57:16 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/04/16 05:59:21 by mfunakos         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:14:51 by mfunakos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void *	ft_bzero(void *b, int c, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *ptr = b;
-	size_t	i;
+	char	*ptr;
 
-	i = 0;
-	while (len > i)
+	ptr = s;
+	while (n-- > 0)
 	{
-		ptr[i] = (unsigned char)c;
-		i++;
+		*ptr++ = '\0';
 	}
-	return (b);
 }
 
 #include <string.h>
@@ -33,18 +30,30 @@ int	main(void)
 {
 	char	a[] = "Hello";
 	printf("元 = 「%s」\n", a);
-	printf("bzero = 「%s」\n", bzero(a, 'A', 2));
-	printf("ft_bzero = 「%s」\n", ft_bzero(a, 'A', 2));
+	bzero(a, 2);
+	for(int i = 0; i < 5; i++)
+		printf("%d = %c\n", i, a[i]);
+	ft_bzero(a, 2);
+	for(int i = 0; i < 5; i++)
+		printf("%d = %c\n", i, a[i]);
 
 	char	b[] = "wor ld!";
-	printf("\n元 = 「%s」\n", b);
-	printf("bzero = 「%s」\n", bzero(b, ' ', 2));
-	printf("ft_bzero = 「%s」\n", ft_bzero(b, ' ', 2));
+	printf("元 = 「%s」\n", b);
+	bzero(b, 3);
+	for(int i = 0; i < 7; i++)
+		printf("%d = %c\n", i, b[i]);
+	ft_bzero(b, 3);
+	for(int i = 0; i < 7; i++)
+		printf("%d = %c\n", i, b[i]);
 
 	char	c[] = "#\t%&\n";
 	printf("\n元 = 「%s」\n", c);
-	printf("bzero = 「%s」\n", bzero(c, '@', 2));
-	printf("ft_bzero = 「%s」\n", ft_bzero(c, '@', 2));
+	bzero(c, (0));
+	for(int i = 0; i < 5; i++)
+		printf("%d = %c\n", i, c[i]);
+	ft_bzero(c, 0);
+	for(int i = 0; i < 5; i++)
+		printf("%d = %c\n", i, c[i]);
 
 	return (0);
 }
