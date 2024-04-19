@@ -6,7 +6,7 @@
 /*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:40:54 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/04/17 20:54:17 by mfunakos         ###   ########.fr       */
+/*   Updated: 2024/04/20 01:31:58 by mfunakos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,24 @@ int	main(void)
 	printf("\n元 = 「%s」\n", e);
 	printf("memmove = 「%s」\n", (char *)memmove(e, "123456789", 0));
 	printf("ft_memmove = 「%s」\n", (char *)ft_memmove(e, "123456789", 0));
+
+	char	f[] = "123456";
+	printf("\n元 = 「%s」\n", f);
+	printf("memmove = 「%s」\n", (char *)memmove(f, f, 3));
+	char	f2[] = "123456";
+	printf("ft_memmove = 「%s」\n", (char *)ft_memmove(f2, f2, 3));
+
+	char	g[] = "123456";
+	printf("\n元 = 「%s」\n", g);
+	printf("memmove = 「%s」\n", (char *)memmove(g +2, g, 4));
+	char	g2[] = "123456";
+	printf("ft_memmove = 「%s」\n", (char *)ft_memmove(g2 +2, g2, 4));
+
+	char	h[] = "123456";
+	printf("\n元 = 「%s」\n", h);
+	printf("memmove = 「%s」\n", (char *)memmove(h, h + 3, 5));
+	char	h2[] = "123456";
+	printf("ft_memmove = 「%s」\n", (char *)ft_memmove(h2, h2 + 3, 5));
 
 	return (0);
 }
