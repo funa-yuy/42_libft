@@ -1,0 +1,48 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"unistd.h": "c",
+			"stdio.h": "c",
+			"string.h": "c",
+			"algorithm": "c",
+			"random": "c",
+			"ostream": "c",
+			"__hash_table": "c",
+			"__split_buffer": "c",
+			"__tree": "c",
+			"array": "c",
+			"bitset": "c",
+			"deque": "c",
+			"initializer_list": "c",
+			"iterator": "c",
+			"map": "c",
+			"stack": "c",
+			"string": "c",
+			"string_view": "c",
+			"unordered_map": "c",
+			"utility": "c",
+			"vector": "c",
+			"sstream": "c",
+			"__bit_reference": "c",
+			"chrono": "c",
+			"__locale": "c",
+			"limits": "c",
+			"ratio": "c",
+			"filesystem": "c",
+			"ios": "c",
+			"__node_handle": "c",
+			"fstream": "c",
+			"locale": "c",
+			"__string": "c",
+			"ft_stock_str.h": "c",
+			"functional": "c",
+			"memory": "c",
+			"stdlib.h": "c"
+		}
+	}
+}
