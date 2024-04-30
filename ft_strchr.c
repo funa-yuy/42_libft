@@ -6,7 +6,7 @@
 /*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 08:47:05 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/04/24 10:07:19 by mfunakos         ###   ########.fr       */
+/*   Updated: 2024/04/30 13:17:39 by mfunakos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,14 @@ int	main(void)
 	char	k[] = "Hell o";
 	printf("strchr = %s\n", strchr(k, 32));
 	printf("ft_strchr = %s\n", ft_strchr(k, 32));
+
+	char	l[] = "A";
+	printf("strchr = %s\n", strchr(l, 'A'));
+	printf("ft_strchr = %s\n", ft_strchr(l, 'A'));
+
+	char	m[] = "12344321";
+	printf("strchr = %s\n", strchr(m, '3'));
+	printf("ft_strchr = %s\n", ft_strchr(m, '3'));
 
 	return (0);
 }
