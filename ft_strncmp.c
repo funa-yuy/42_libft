@@ -6,7 +6,7 @@
 /*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 13:19:09 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/04/30 13:59:36 by mfunakos         ###   ########.fr       */
+/*   Updated: 2024/05/08 21:40:03 by mfunakos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,26 +33,26 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 int	main(void)
 {
 	char a[] = "ABCDE";
-	printf("strncmp  %s:Hello = %d\n", a, strncmp(a, "ABCDE", 4));
-	printf("ft_strncmp  %s:Hello = %d\n", a, ft_strncmp(a, "ABCDE", 4));
-	printf("strncmp  %s:Hello = %d\n", a, strncmp(a, "ABDDD", 4));
-	printf("ft_strncmp  %s:Hello = %d\n", a, ft_strncmp(a, "ABDDD", 4));
-	printf("strncmp  %s:Hello = %d\n", a, strncmp(a, "ABC", 4));
-	printf("ft_strncmp  %s:Hello = %d\n", a, ft_strncmp(a, "ABC", 4));
-	printf("strncmp  %s:Hello = %d\n", a, strncmp(a, "ADD", 4));
-	printf("ft_strncmp  %s:Hello = %d\n", a, ft_strncmp(a, "ADD", 4));
-	printf("strncmp  %s:Hello = %d\n", a, strncmp(a, "ABC", 2));
-	printf("ft_strncmp  %s:Hello = %d\n", a, ft_strncmp(a, "ABC", 2));
-	printf("strncmp  %s:Hello = %d\n", a, strncmp(a, "ADD", 2));
-	printf("ft_strncmp  %s:Hello = %d\n", a, ft_strncmp(a, "ADD", 2));
-	printf("strncmp  %s:Hello = %d\n", a, strncmp(a, "A", 3));
-	printf("ft_strncmp  %s:Hello = %d\n", a, ft_strncmp(a, "A", 3));
-	printf("strncmp  %s:Hello = %d\n", a, strncmp(a, "E", 3));
-	printf("ft_strncmp  %s:Hello = %d\n", a, ft_strncmp(a, "E", 3));
-	printf("strncmp  %s:Hello = %d\n", a, strncmp(a, "A", 1));
-	printf("ft_strncmp  %s:Hello = %d\n", a, ft_strncmp(a, "A", 1));
-	printf("strncmp  %s:Hello = %d\n", a, strncmp(a, "E", 1));
-	printf("ft_strncmp  %s:Hello = %d\n", a, ft_strncmp(a, "E", 1));
+	printf("strncmp  %s:ABCDE = %d\n", a, strncmp(a, "ABCDE", 4));
+	printf("ft_strncmp  %s:ABCDE = %d\n", a, ft_strncmp(a, "ABCDE", 4));
+	printf("strncmp  %s:ABDDD = %d\n", a, strncmp(a, "ABDDD", 4));
+	printf("ft_strncmp  %s:ABDDD = %d\n", a, ft_strncmp(a, "ABDDD", 4));
+	printf("strncmp  %s:ABC = %d\n", a, strncmp(a, "ABC", 4));
+	printf("ft_strncmp  %s:ABC = %d\n", a, ft_strncmp(a, "ABC", 4));
+	printf("strncmp  %s:ADD = %d\n", a, strncmp(a, "ADD", 4));
+	printf("ft_strncmp  %s:ADD = %d\n", a, ft_strncmp(a, "ADD", 4));
+	printf("strncmp  %s:ABC = %d\n", a, strncmp(a, "ABC", 2));
+	printf("ft_strncmp  %s:ABC = %d\n", a, ft_strncmp(a, "ABC", 2));
+	printf("strncmp  %s:ADD = %d\n", a, strncmp(a, "ADD", 2));
+	printf("ft_strncmp  %s:ADD = %d\n", a, ft_strncmp(a, "ADD", 2));
+	printf("strncmp  %s:A = %d\n", a, strncmp(a, "A", 3));
+	printf("ft_strncmp  %s:A = %d\n", a, ft_strncmp(a, "A", 3));
+	printf("strncmp  %s:E = %d\n", a, strncmp(a, "E", 3));
+	printf("ft_strncmp  %s:E = %d\n", a, ft_strncmp(a, "E", 3));
+	printf("strncmp  %s:A = %d\n", a, strncmp(a, "A", 1));
+	printf("ft_strncmp  %s:A = %d\n", a, ft_strncmp(a, "A", 1));
+	printf("strncmp  %s:E = %d\n", a, strncmp(a, "E", 1));
+	printf("ft_strncmp  %s:E = %d\n", a, ft_strncmp(a, "E", 1));
 
 	char b[] = "H";
 	printf("\nstrncmp  %s:Hello = %d\n", b, strncmp(b, "Hello", 4));
@@ -88,5 +88,16 @@ int	main(void)
 	printf("strncmp  %s: = %d\n", d, strncmp(d, " ", 1));
 	printf("ft_strncmp  %s: = %d\n", d, ft_strncmp(d, " ", 1));
 
+	char e[] = "Hel\0lo";
+	printf("\nstrncmp  %s:Hello = %d\n", e, strncmp(e, "Hello", 5));
+	printf("ft_strncmp  %s:Hello = %d\n", e, ft_strncmp(e, "Hello", 5));
+	printf("strncmp  %s:%s = %d\n", e, e, strncmp(e, e, 6));
+	printf("ft_strncmp  %s:%s = %d\n", e, e, ft_strncmp(e, e, 6));
+	printf("strncmp  %s:12 34 56 = %d\n", e, strncmp(e, "12 34 56", 5));
+	printf("ft_strncmp  %s:12 34 56 = %d\n", e, ft_strncmp(e, "12 34 56", 5));
+	printf("strncmp  %s: = %d\n", e, strncmp(e, "", 0));
+	printf("ft_strncmp  %s: = %d\n", e, ft_strncmp(e, "", 0));
+	printf("strncmp  %s:  = %d\n", e, strncmp(e, " ", 1));
+	printf("ft_strncmp  %s:  = %d\n", e, ft_strncmp(e, " ", 1));
 	return (0);
 }
