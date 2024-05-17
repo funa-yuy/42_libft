@@ -6,7 +6,7 @@
 /*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:04:52 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/05/11 21:14:16 by mfunakos         ###   ########.fr       */
+/*   Updated: 2024/05/11 21:16:27 by mfunakos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	ft_atoi(const char *str)
 {
 	unsigned long	result;
-	// unsigned long	long_max;
 	int	sign;
 	int i;
 	int	digit;
@@ -23,7 +22,6 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	result = 0;
 	i = 0;
-	// long_max = LONG_MAX;
 	while(str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || \
 	str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
 		i++;
