@@ -1,17 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 22:48:55 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/05/20 19:48:27 by mfunakos         ###   ########.fr       */
+/*   Created: 2024/05/20 21:42:19 by mfunakos          #+#    #+#             */
+/*   Updated: 2024/05/20 22:33:48 by mfunakos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdlib.h>
+
+// ↓消す
+char f1(unsigned int	i, char const s)
+{
+
+	return (i + s);
+}
+
+char f2(unsigned int	i, char const s)
+{
+
+	return (i%2 + s);
+}
+// ↑消す
 
 int	ft_strlen(const char *s)
 {
@@ -26,30 +40,24 @@ int	ft_strlen(const char *s)
 	return (count);
 }
 
-char *ft_strjoin(char const *s1, char const *s2)
+char *ft_strmapi(char const *s, char (*f)(unsigned
+int, char))
 {
-	int	len_s1;
-	int	len_s2;
-	int	i;
 	char	*dst;
+	unsigned int	i;
+	size_t		len;
 
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
+	dst = NULL;
+	len = ft_strlen(s);
 	i = 0;
-	dst = (char *)malloc(sizeof(char) * (len_s1 + len_s2 + 1));
-	if(!dst)
+	dst = (char *)malloc(sizeof(char) * (len + 1));
+	if (!dst)
 		return (NULL);
-	while(i < len_s1)
+	while(s[i] != '\0')
 	{
-		dst[i] = s1[i];
+		dst[i] = f(i , s[i]);
 		i++;
 	}
-	while(i < len_s1 + len_s2)
-	{
-		dst[i] = s2[i - len_s1];
-		i++;
-	}
-	dst[i] = '\0';
 	return (dst);
 }
 
@@ -57,10 +65,8 @@ char *ft_strjoin(char const *s1, char const *s2)
 
 int	main(void)
 {
-	printf("ft_strjoin = %s\n", ft_strjoin("0123456789", "abcdef"));
-	printf("ft_strjoin = %s\n", ft_strjoin("123\n45", "AB' 'C\0DFG"));
-
-
+	printf("ft_strmapi = %s\n", ft_strmapi("00000000", f1));
+	printf("ft_strmapi = %s\n", ft_strmapi("00000000", f2));
 
 	return (0);
 }
