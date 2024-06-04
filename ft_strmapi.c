@@ -3,49 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 21:42:19 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/05/20 22:33:48 by mfunakos         ###   ########.fr       */
+/*   Updated: 2024/06/03 19:39:34 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stddef.h>
-#include <stdlib.h>
 
-// ↓消す
-char f1(unsigned int	i, char const s)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-
-	return (i + s);
-}
-
-char f2(unsigned int	i, char const s)
-{
-
-	return (i%2 + s);
-}
-// ↑消す
-
-int	ft_strlen(const char *s)
-{
-	int	count;
-
-	count = 0;
-	while (*s != '\0')
-	{
-		count++;
-		s++;
-	}
-	return (count);
-}
-
-char *ft_strmapi(char const *s, char (*f)(unsigned
-int, char))
-{
-	char	*dst;
+	char			*dst;
+	size_t			len;
 	unsigned int	i;
-	size_t		len;
 
 	dst = NULL;
 	len = ft_strlen(s);
@@ -53,20 +25,11 @@ int, char))
 	dst = (char *)malloc(sizeof(char) * (len + 1));
 	if (!dst)
 		return (NULL);
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
-		dst[i] = f(i , s[i]);
+		dst[i] = f(i, s[i]);
 		i++;
 	}
+	dst[i] = '\0';
 	return (dst);
-}
-
-#include <stdio.h>
-
-int	main(void)
-{
-	printf("ft_strmapi = %s\n", ft_strmapi("00000000", f1));
-	printf("ft_strmapi = %s\n", ft_strmapi("00000000", f2));
-
-	return (0);
 }

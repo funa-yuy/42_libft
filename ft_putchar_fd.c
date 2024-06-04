@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 22:12:00 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/05/20 22:41:18 by mfunakos         ###   ########.fr       */
+/*   Created: 2024/06/03 16:10:33 by miyuu             #+#    #+#             */
+/*   Updated: 2024/06/03 16:10:48 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
-}
-
-int main(void)
-{
-	ft_putchar_fd('1', 1);
-	ft_putchar_fd(' ', 1);
-	ft_putchar_fd('2', 2);
-	ft_putchar_fd('0', 0);
-	return (0);
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 23:04:16 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/05/20 23:38:19 by mfunakos         ###   ########.fr       */
+/*   Updated: 2024/05/29 18:13:43 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
@@ -34,23 +34,4 @@ void	ft_putnbr_fd(int n, int fd)
 		n = -n;
 	}
 	sum((unsigned int)n, fd);
-}
-
-#include <stdio.h>
-
-int	main(void)
-{
-	ft_putnbr_fd(123456, 1);
-	printf("\n");
-	ft_putnbr_fd(42, 1);
-	printf("\n");
-	ft_putnbr_fd(-98765, 1);
-	printf("\n");
-	ft_putnbr_fd(-2147483648, 1);
-	printf("\n");
-	ft_putnbr_fd(2147483647, 1);
-	printf("\n");
-
-	// printf("(%d)", n - 1);
-	return (0);
 }
