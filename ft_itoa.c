@@ -6,11 +6,12 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 21:28:39 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/06/03 16:15:29 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/06/04 22:59:36 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 static size_t	ft_intlen(long n, int len)
 {

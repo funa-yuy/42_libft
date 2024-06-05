@@ -6,12 +6,11 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 13:19:09 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/06/03 18:15:16 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/06/04 23:03:27 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

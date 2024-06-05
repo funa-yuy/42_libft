@@ -6,13 +6,11 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 18:53:41 by miyuu             #+#    #+#             */
-/*   Updated: 2024/06/03 19:11:15 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/06/04 22:26:59 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s);
 
 char	*ft_strdup(const char *s1)
 {

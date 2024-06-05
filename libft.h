@@ -6,23 +6,17 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 21:48:53 by miyuu             #+#    #+#             */
-/*   Updated: 2024/06/04 20:23:18 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/06/05 15:12:58 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <string.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
+# include <unistd.h>
+# include <stdlib.h>
+# include <stddef.h>
+# include <string.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -34,8 +28,10 @@ void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize);
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize);
+size_t	ft_strlcpy(char *restrict dst, const char *restrict src, \
+size_t dstsize);
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, \
+size_t dstsize);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);

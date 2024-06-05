@@ -6,14 +6,14 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:04:52 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/06/04 20:13:59 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/06/04 22:59:54 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
-int	ft_atoi_check(const char *str, int i, int sign)
+static int	ft_atoi_check(const char *str, int i, int sign)
 {
 	unsigned long	result;
 	int				digit;

@@ -6,14 +6,12 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 22:48:55 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/06/03 16:09:16 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/06/04 22:27:07 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
-
-size_t	ft_strlen(const char *s);
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
