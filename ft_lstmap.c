@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 18:09:05 by miyuu             #+#    #+#             */
-/*   Updated: 2024/06/08 18:35:58 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/06/08 19:51:06 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,40 +22,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	tmp = NULL;
 	if (!lst || !f || !del)
 		return (NULL);
-	if (lst != NULL)
+	while (lst != NULL)
 	{
 		fir = f(lst->content);
-		if (fir == NULL)
-		{
-			ft_lstclear(&tmp, del);
-			return (NULL);
-		}
 		p = ft_lstnew(fir);
-		if (p == NULL)
+		if (p == NULL || fir == NULL)
 		{
-			ft_lstclear(&tmp, del);
 			del(fir);
+			ft_lstclear(&tmp, del);
 			return (NULL);
 		}
-		tmp = p;
-		while (lst->next != NULL)
-		{
-			lst = lst->next;
-			fir = f(lst->content);
-			if (fir == NULL)
-			{
-				ft_lstclear(&tmp, del);
-				return (NULL);
-			}
-			p->next = ft_lstnew(fir);
-			if (p->next == NULL)
-			{
-				ft_lstclear(&tmp, del);
-				del(fir);
-				return (NULL);
-			}
-			p = p->next;
-		}
+		ft_lstadd_back(&tmp, p);
+		lst = lst->next;
 	}
 	p = tmp;
 	return (p);
