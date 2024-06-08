@@ -6,7 +6,7 @@
 /*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 18:09:05 by miyuu             #+#    #+#             */
-/*   Updated: 2024/06/08 19:51:06 by miyuu            ###   ########.fr       */
+/*   Updated: 2024/06/08 20:08:28 by mfunakos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		fir = f(lst->content);
 		p = ft_lstnew(fir);
-		if (p == NULL || fir == NULL)
+		if (p == NULL)
 		{
 			del(fir);
 			ft_lstclear(&tmp, del);

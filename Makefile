@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+         #
+#    By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/11 17:00:40 by mfunakos          #+#    #+#              #
-#    Updated: 2024/06/08 14:42:48 by miyuu            ###   ########.fr        #
+#    Updated: 2024/06/08 20:28:33 by mfunakos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,10 @@ OBJS = $(SRCS:.c=.o)
 
 0_BONUS = $(BONUS:.c=.o)
 
+ifdef WITH_BONUS
+OBJS +=	$(0_BONUS)
+endif
+
 .PHONY: all clean fclean re
 
 all: $(NAME)
@@ -71,15 +75,15 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-bonus: $(0_BONUS)
-	ar rc $(NAME) $(0_BONUS)
-	ranlib $(NAME)
+#@つけると、コマンドが実行されるときにコマンドが表示されない
+bonus:
+	@make WITH_BONUS=1
 
 %.o: %.c
 	$(CC) $(CFLAGS)  -c $< -o $@
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(0_BONUS)
 
 fclean: clean
 	rm -f $(NAME) $(0_BONUS)
