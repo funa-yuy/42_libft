@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+         #
+#    By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/11 17:00:40 by mfunakos          #+#    #+#              #
-#    Updated: 2024/06/05 17:53:14 by mfunakos         ###   ########.fr        #
+#    Updated: 2024/06/08 14:42:48 by miyuu            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,19 @@ ft_substr.c \
 ft_tolower.c \
 ft_toupper.c \
 
+BONUS = ft_lstnew.c\
+ft_lstadd_front.c\
+ft_lstsize.c\
+ft_lstlast.c\
+ft_lstadd_back.c\
+ft_lstdelone.c\
+ft_lstclear.c\
+ft_lstiter.c\
+ft_lstmap.c\
+
 OBJS = $(SRCS:.c=.o)
+
+0_BONUS = $(BONUS:.c=.o)
 
 .PHONY: all clean fclean re
 
@@ -59,6 +71,10 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
+bonus: $(0_BONUS)
+	ar rc $(NAME) $(0_BONUS)
+	ranlib $(NAME)
+
 %.o: %.c
 	$(CC) $(CFLAGS)  -c $< -o $@
 
@@ -66,6 +82,6 @@ clean:
 	rm -rf $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(0_BONUS)
 
 re: fclean all
