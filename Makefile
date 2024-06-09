@@ -6,7 +6,7 @@
 #    By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/11 17:00:40 by mfunakos          #+#    #+#              #
-#    Updated: 2024/06/08 20:28:33 by mfunakos         ###   ########.fr        #
+#    Updated: 2024/06/09 15:52:31 by mfunakos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,6 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-#@つけると、コマンドが実行されるときにコマンドが表示されない
 bonus:
 	@make WITH_BONUS=1
 
