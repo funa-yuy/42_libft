@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 22:22:42 by mfunakos          #+#    #+#             */
-/*   Updated: 2024/06/05 17:53:11 by mfunakos         ###   ########.fr       */
+/*   Updated: 2024/07/01 12:54:25 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	dst = NULL;
 	i = 0;
+	if (!s)
+		return (NULL);
 	s_len = ft_strlen(s);
 	if (s_len <= start)
 		len = 0;
