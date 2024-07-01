@@ -6,7 +6,11 @@
 #    By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/11 17:00:40 by mfunakos          #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2024/06/09 17:06:31 by miyuu            ###   ########.fr        #
+=======
+#    Updated: 2024/06/09 16:12:06 by mfunakos         ###   ########.fr        #
+>>>>>>> refs/remotes/origin/master
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +79,6 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-#@つけると、コマンドが実行されるときにコマンドが表示されない
 bonus:
 	@make WITH_BONUS=1
 
