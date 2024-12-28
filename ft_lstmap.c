@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miyuu <miyuu@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 18:09:05 by miyuu             #+#    #+#             */
-/*   Updated: 2024/06/09 15:55:11 by mfunakos         ###   ########.fr       */
+/*   Updated: 2024/12/29 01:54:39 by miyuu            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*p;
 	void	*fir;
 
-	p = NULL;
-	tmp = NULL;
 	if (!lst || !f || !del)
 		return (NULL);
+	p = NULL;
+	tmp = NULL;
 	while (lst != NULL)
 	{
 		fir = f(lst->content);
