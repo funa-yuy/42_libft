@@ -6,7 +6,7 @@
 /*   By: mfunakos <mfunakos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 21:48:53 by miyuu             #+#    #+#             */
-/*   Updated: 2024/06/09 15:55:34 by mfunakos         ###   ########.fr       */
+/*   Updated: 2024/12/29 14:44:05 by mfunakos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <string.h>
+# include <stdint.h>
 
 typedef struct s_list
 {
